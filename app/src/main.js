@@ -2,4 +2,4 @@ import './style.css'
 
 
 document.querySelector('#app').innerHTML = `
-<p>Hello World </p>`
+<p>Hello Pokemon </p>`
