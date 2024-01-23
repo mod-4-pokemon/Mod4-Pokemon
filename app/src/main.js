@@ -3,7 +3,8 @@ import fetchData from './utils.js'
 
 
 
-console.log( await fetchData("https://pokeapi.co/api/v2/pokemon/ditto"))
+console.log( await fetchData("https://pokeapi.co/api/v2/pokemon/?limit=50&offset=0"))
 
-document.querySelector('#app').innerHTML = `
-<p>Hello Pokemon </p>`
+const main = document.querySelector('#app')
+
+
