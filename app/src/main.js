@@ -1,10 +1,8 @@
-import './style.css'
-import fetchData from './utils.js'
+import "./style.css";
+import renderPoke from "./render.js";
 
+const main = () => {
+  renderPoke();
+};
 
-
-console.log( await fetchData("https://pokeapi.co/api/v2/pokemon/?limit=50&offset=0"))
-
-const main = document.querySelector('#app')
-
-
+main();
