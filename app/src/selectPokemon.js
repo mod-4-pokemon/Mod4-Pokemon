@@ -23,5 +23,4 @@ export const selectPokemon = async (pokeName) => {
 
     let modal = document.createElement('div')
     modal.append(img, abilityInfo, movesInfo, orderInfo, typeInfo, weightInfo)
-    // modal.append()
 };
