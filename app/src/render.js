@@ -43,13 +43,6 @@ export const renderPoke = async () => {
         modal.style.display = "none";
       }
     }
-    
-    // const toggleModalDisplayOff = () => {
-    //   let modal = document.getElementById("modal");
-    //   if (modal.style.display === "block") {
-    //     modal.style.display = "none";
-    //   }
-    // }
 
    pokeDiv.addEventListener('click', async (e) => {
     await selectPokemon(poke.name)
