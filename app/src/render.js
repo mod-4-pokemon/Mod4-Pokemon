@@ -1,4 +1,7 @@
 import fetchData from "./utils";
+import { selectPokemon } from "./selectPokemon.js";
+
+ 
 
 export const renderPoke = async () => {
   const mainDiv = document.querySelector("#app");
@@ -11,14 +14,13 @@ export const renderPoke = async () => {
     "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
   );
   const results = allPoke[0].results;
-  console.log(results);
 
   results.forEach(async (poke) => {
     const pokeName = await fetchData(
       `https://pokeapi.co/api/v2/pokemon/${poke.name}`
     );
     const pokeDiv = document.createElement("div");
-    pokeDiv.id = poke.name
+    pokeDiv.className = poke.name
     const pokeP = document.createElement("p");
     pokeP.textContent = poke.name;
     pokeDiv.append(pokeP);
@@ -27,7 +29,32 @@ export const renderPoke = async () => {
 
     img.src = pokeName[0].sprites.front_default;
 
+
     pokeDiv.append(img);
+    const toggleModalDisplay = () => {
+      let modal = document.querySelector('#modal');
+      console.log(modal);
+    
+      let computedStyle = window.getComputedStyle(modal);
+    
+      if (computedStyle.getPropertyValue('display') === "none") {
+        modal.style.display = "block";
+      } else {
+        modal.style.display = "none";
+      }
+    }
+    
+    // const toggleModalDisplayOff = () => {
+    //   let modal = document.getElementById("modal");
+    //   if (modal.style.display === "block") {
+    //     modal.style.display = "none";
+    //   }
+    // }
+
+   pokeDiv.addEventListener('click', async (e) => {
+    await selectPokemon(poke.name)
+    toggleModalDisplay()
+    })
   });
 };
 
