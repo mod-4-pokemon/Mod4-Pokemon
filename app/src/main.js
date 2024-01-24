@@ -1,5 +1,5 @@
 import "./style.css";
-import renderPoke from "./render.js";
+import { renderPoke } from "./render.js";
 
 const main = () => {
   renderPoke();
