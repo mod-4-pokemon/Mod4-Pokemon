@@ -82,6 +82,31 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/*
+@keyframes outlineColorChange {
+  0% {
+    border-color: red; 
+  }
+  50% {
+    border-color: yellow; 
+  }
+  100% {
+    border-color: blue; 
+  }
+}
+*/
+
+#pokeContainer {
+  margin-top: 10rem;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border: 2px solid black;
+  max-height: 300px;
+  overflow: auto;
+  /* animation: outlineColorChange 10s infinite;  */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

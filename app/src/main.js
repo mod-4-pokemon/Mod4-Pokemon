@@ -1,6 +1,6 @@
 import './style.css'
-import fetchData from './utils.js'
 import { selectPokemon } from './selectPokemon.js'
+import { renderPoke } from "./render.js";
 //import name of selected pokemon
 
 selectPokemon('pikachu')
@@ -8,3 +8,12 @@ selectPokemon('pikachu')
 
 document.querySelector('#app').innerHTML = `
 <p>Hello Pokemon </p>`
+
+
+
+const main = () => {
+  renderPoke();
+};
+
+main();
+

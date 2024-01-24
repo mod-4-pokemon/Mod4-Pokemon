@@ -3,19 +3,22 @@ const fetchData = async (url, options = {}) => {
     const response = await fetch(url, options);
 
     if (!response.ok) {
-      throw new Error(`Fetch failed. ${response.status} ${response.statusText}`)
+      throw new Error(
+        `Fetch failed. ${response.status} ${response.statusText}`
+      );
     }
 
-    const isJson = (response.headers.get('content-type') || '').includes('application/json')
-    let data = isJson ? await response.json() : await response.text()
+    const isJson = (response.headers.get("content-type") || "").includes(
+      "application/json"
+    );
+    let data = isJson ? await response.json() : await response.text();
 
-    return [data, null]; 
-  }
-  catch (error) {
+    return [data, null];
+  } catch (error) {
     console.error(error.message);
 
-    return [null, error]; 
+    return [null, error];
   }
-}
+};
 
 export default fetchData;
