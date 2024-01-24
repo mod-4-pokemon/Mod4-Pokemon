@@ -4,7 +4,6 @@ export const selectPokemon = async (pokeName) => {
     const pokemon = await fetchData(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
 
     const { abilities, moves, order, types, weight, sprites } = pokemon[0]
-    console.log(sprites.front_default)
 
     const img = document.createElement('img')
     const abilityInfo = document.createElement('p')
@@ -22,5 +21,9 @@ export const selectPokemon = async (pokeName) => {
     console.log(weightInfo)
 
     let modal = document.createElement('div')
-    modal.append(img, abilityInfo, movesInfo, orderInfo, typeInfo, weightInfo)
+    let modalContent = document.createElement('div')
+    modal.id = 'modal'
+    modalContent.className = 'modal-content'
+    modalContent.append(img, abilityInfo, movesInfo, orderInfo, typeInfo, weightInfo)
+    modal.append(modalContent)
 };
