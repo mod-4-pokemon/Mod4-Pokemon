@@ -199,3 +199,20 @@ p {
 span {
   color: yellow;
 }
+
+@keyframes hoverAnimation {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px); /* Adjust the value to control the hover height */
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the paragraph */
+img:hover {
+  animation: hoverAnimation 0.5s ease infinite; /* Adjust the duration and timing function as needed */
+}
