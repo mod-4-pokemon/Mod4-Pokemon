@@ -182,12 +182,13 @@ p {
   border-radius: 5px;
   font-size: 16px;
   outline: none;
-  transition: border-color 0.3s ease;
-  
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to the transition */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add box shadow for the shadow border effect */
 }
 
 #searchInput:focus {
   border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Adjust the shadow when input is focused */
 }
 
 #title {
