@@ -2,7 +2,7 @@ import fetchData from "./utils";
 import { selectPokemon } from "./selectPokemon.js";
 
 // Function to render Pokémon based on search query
-export const renderPoke = async (searchQuery = '') => {
+export const renderPoke = async (searchQuery = "") => {
   const mainDiv = document.querySelector("#app");
 
   // Create search input field
@@ -26,18 +26,17 @@ export const renderPoke = async (searchQuery = '') => {
   const renderFilteredPoke = async (searchQuery) => {
     pokeContainer.innerHTML = ""; // Clear previous content
 
-
     // Filter Pokémon based on the search query
     const filteredResults = results.filter((poke) =>
       poke.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // If no matching Pokémon found, display "Unknown Pokémon" message
+    // If no matching Pokémon found, display "Unknown Pokémon" message (IMPORTANT**)
     if (filteredResults.length === 0) {
       const unknownPokemonMessage = document.createElement("p");
       unknownPokemonMessage.textContent = "Unknown Pokémon";
       pokeContainer.appendChild(unknownPokemonMessage);
-      return; // Exit the function
+      return;
     }
     // Display filtered Pokémon
     filteredResults.forEach(async (poke) => {
@@ -55,7 +54,7 @@ export const renderPoke = async (searchQuery = '') => {
       pokeDiv.append(img);
 
       // Event listener to select Pokémon
-      pokeDiv.addEventListener('click', async (e) => {
+      pokeDiv.addEventListener("click", async (e) => {
         await selectPokemon(poke.name);
         toggleModalDisplay();
       });
@@ -73,10 +72,10 @@ export const renderPoke = async (searchQuery = '') => {
 
   // Toggle modal display function
   const toggleModalDisplay = () => {
-    let modal = document.querySelector('#modal');
+    let modal = document.querySelector("#modal");
     let computedStyle = window.getComputedStyle(modal);
-  
-    if (computedStyle.getPropertyValue('display') === "none") {
+
+    if (computedStyle.getPropertyValue("display") === "none") {
       modal.style.display = "block";
     } else {
       modal.style.display = "none";
