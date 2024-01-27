@@ -57,6 +57,7 @@ export const renderPoke = async (searchQuery = "") => {
       pokeDiv.addEventListener("click", async (e) => {
         await selectPokemon(poke.name);
         toggleModalDisplay();
+        playPokemonSound(); // Play sound effect
       });
     });
   };
