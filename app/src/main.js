@@ -6,10 +6,14 @@ import { renderPoke } from "./render.js";
 // console.log( await fetchData("https://pokeapi.co/api/v2/pokemon/"))
 
 document.querySelector('#app').innerHTML = `
-<p>Choose a Pokemon 🥳</p>`
+<h1 id="title">Poke<span>Dex</span></h1>
+<p>Select a Pokémon 🦅</p>
+`
 
-const main = () => {
-    renderPoke();
+
+const main = async () => {
+   await renderPoke();
+   
 };
 
 main()

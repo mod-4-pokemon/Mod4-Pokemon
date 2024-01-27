@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: white;
+  background-color: #E4E6EB;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -101,7 +101,7 @@ p {
 */
 
 #pokeContainer {
-  margin-top: 10rem;
+  margin-top: 4rem;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -172,4 +172,30 @@ p {
 
 .modalNameText {
   color: blue;
+}
+
+
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  
+}
+
+#searchInput:focus {
+  border-color: #007bff;
+}
+
+#title {
+  color: #18191A;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+}
+
+span {
+  color: yellow;
 }
