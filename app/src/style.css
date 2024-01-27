@@ -108,6 +108,8 @@ p {
   border: 2px solid black;
   max-height: 300px;
   overflow: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add box shadow for the shadow border effect */
+}
   /* animation: outlineColorChange 10s infinite;  */
 }
 
@@ -173,6 +175,7 @@ p {
 
 .modalNameText {
   color: blue;
+  font-weight: bold;
 }
 
 
@@ -218,3 +221,8 @@ span {
 img:hover {
   animation: hoverAnimation 0.5s ease infinite; /* Adjust the duration and timing function as needed */
 }
+
+#selectTitle {
+  font-weight: bold;
+}
+
